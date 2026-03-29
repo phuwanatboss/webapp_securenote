@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SecureNote</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 12px;
+            width: 350px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+
+        button {
+            padding: 6px 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #333;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        ul {
+            margin-top: 20px;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            background: #fafafa;
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .actions button {
+            margin-left: 5px;
+            background: #666;
+        }
+
+        .actions button:first-child {
+            background: #d9534f;
+        }
+
+        .actions button:last-child {
+            background: #0275d8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>SecureNote</h1>
+
+    <div class="input-group">
+        <input id="noteInput" placeholder="Write note..." 
+               onkeypress="if(event.key==='Enter') addNote()" />
+        <button onclick="addNote()">Add</button>
+    </div>
+
+    <ul id="noteList"></ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
